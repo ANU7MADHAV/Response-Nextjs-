@@ -5,6 +5,7 @@ import IssueEditButton from "./IssueEditButton";
 import IssueEditPage from "./IssueEditPage";
 import IssueDeleteButton from "./edit/IssueDeleteButton";
 import AssigneItems from "./AssigneItems";
+import { Metadata } from "next";
 
 interface Prop {
   params: { id: string };
@@ -20,7 +21,7 @@ const IssueDetailsPage = async ({ params }: Prop) => {
   return (
     <Grid columns={{ initial: "1", md: "2" }} gap="4">
       <Box>
-        <IssueEditPage  response={response} />
+        <IssueEditPage response={response} />
       </Box>
       <Box>
         <Flex gap="3">
@@ -31,6 +32,11 @@ const IssueDetailsPage = async ({ params }: Prop) => {
       </Box>
     </Grid>
   );
+};
+
+export const metadata: Metadata = {
+  title: "Response",
+  description: "Response details",
 };
 
 export default IssueDetailsPage;

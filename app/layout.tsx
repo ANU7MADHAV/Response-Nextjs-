@@ -7,11 +7,6 @@ import { ThemeProvider } from "./ThemeProvider";
 import AuthProvider from "./auth/Provider";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Response Web App",
-  description: "Write your responses",
-};
-
 export default function RootLayout({
   children,
 }: {

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import { NextResponse } from "next/server";
 import IssueSkeleton from "../../_components/IssueSkeleton";
+import { Metadata } from "next";
 
 const IssueForm = dynamic(
   () => import("@/app/response/_components/IssueForm"),
@@ -30,6 +31,11 @@ const IssueEditPage = async ({ params }: Prop) => {
   if (!issue) return notFound();
 
   return <IssueForm issue={issue} />;
+};
+
+export const metadata: Metadata = {
+  title: "Response (edit-page)",
+  description: "Response edit page",
 };
 
 export default IssueEditPage;

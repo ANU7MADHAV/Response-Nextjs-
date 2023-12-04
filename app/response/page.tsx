@@ -6,6 +6,7 @@ import IssueAction from "./IssueAction";
 import { Response, Status } from "@prisma/client";
 import { ArrowUpIcon } from "@radix-ui/react-icons";
 import Pagination from "@/components/Pagination";
+import { Metadata } from "next";
 
 interface Prop {
   searchParams: { status: Status; orderBy: keyof Response; page: string };
@@ -87,5 +88,11 @@ const IssuesPage = async ({ searchParams }: Prop) => {
     </div>
   );
 };
+
+export const metadata: Metadata = {
+  title: "Responses",
+  description: "All responses are here",
+};
+
 export const dynamic = "force-dynamic";
 export default IssuesPage;
