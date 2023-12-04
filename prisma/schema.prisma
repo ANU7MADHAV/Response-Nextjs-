@@ -58,8 +58,8 @@ model Session {
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id])
 
-  @@map("sessions")
   @@index([userId])
+  @@map("sessions")
 }
 
 model User {
