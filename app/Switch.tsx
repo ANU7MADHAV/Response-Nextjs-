@@ -1,11 +1,10 @@
 "use client";
-import { Show } from "@chakra-ui/react";
 import { Switch } from "@nextui-org/react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export const ThemeSwitcher = () => {
+export const Switcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -18,15 +17,13 @@ export const ThemeSwitcher = () => {
   return (
     <>
       <Switch
-        size="md"
+        size="sm"
         color={theme === "dark" ? "success" : "primary"}
         startContent={theme === "dark" ? <SunIcon /> : <MoonIcon />}
         endContent={theme === "light" ? <MoonIcon /> : <SunIcon />}
         onChange={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="font-medium px-4"
-      >
-        Dark mode
-      </Switch>
+        className="pl-4"
+      ></Switch>
     </>
   );
 };

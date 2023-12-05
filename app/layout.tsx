@@ -6,6 +6,9 @@ import QueryClientProvider from "./QueryClientProvider";
 import { ThemeProvider } from "./ThemeProvider";
 import AuthProvider from "./auth/Provider";
 import "./globals.css";
+import { Providers } from "./Providers";
+import { Switcher } from "./Switch";
+import { Show } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Response Web App",
@@ -23,10 +26,15 @@ export default function RootLayout({
         <QueryClientProvider>
           <AuthProvider>
             <ThemeProvider>
-              <Theme>
-                <NavBar />
-                <main className="p-5">{children}</main>
-              </Theme>
+              <Providers>
+                <Theme>
+                  <NavBar />
+                  <Show below="sm">
+                    <Switcher />
+                  </Show>
+                  <main className="p-5">{children}</main>
+                </Theme>
+              </Providers>
             </ThemeProvider>
           </AuthProvider>
         </QueryClientProvider>

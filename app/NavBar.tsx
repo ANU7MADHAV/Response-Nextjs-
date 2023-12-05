@@ -16,6 +16,8 @@ import { FaTools } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { Show } from "@chakra-ui/react";
+import { Switcher } from "./Switch";
 
 const NavBar = () => {
   const { status, data: session } = useSession();
@@ -50,7 +52,10 @@ const NavBar = () => {
                 ))}
               </Flex>
               <Box>
-                <ThemeSwitcher />
+                <Show above="sm">
+                  <ThemeSwitcher />
+                </Show>
+
                 {status === "authenticated" && (
                   <DropdownMenu.Root>
                     <DropdownMenu.Trigger>
