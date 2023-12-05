@@ -75,7 +75,7 @@ const NavBar = () => {
                 {status === "unauthenticated" && (
                   <Link
                     href="/api/auth/signin"
-                    className="text-zinc-600 hover:text-zinc-800"
+                    className="text-zinc-600 font-medium hover:text-zinc-800"
                   >
                     Sign in
                   </Link>
