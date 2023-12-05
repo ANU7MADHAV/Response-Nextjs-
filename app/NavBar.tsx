@@ -30,7 +30,7 @@ const NavBar = () => {
         <ul className=" border-b h-20  px-10 mb-4 py-5">
           <Container>
             <Flex align="center" justify="between">
-              <Flex align="center" gap="3">
+              <Flex align="center" gap="4">
                 <Link href="/">
                   <FaTools />
                 </Link>
@@ -75,7 +75,7 @@ const NavBar = () => {
                 {status === "unauthenticated" && (
                   <Link
                     href="/api/auth/signin"
-                    className="text-zinc-600 font-medium hover:text-zinc-800"
+                    className="text-zinc-600 font-medium hover:text-zinc-800 whitespace-nowrap"
                   >
                     Sign in
                   </Link>

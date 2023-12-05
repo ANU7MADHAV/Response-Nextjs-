@@ -17,13 +17,12 @@ export const ThemeSwitcher = () => {
 
   return (
     <Switch
+      size="sm"
       color={theme === "dark" ? "success" : "primary"}
       startContent={theme === "dark" ? <SunIcon /> : <MoonIcon />}
       endContent={theme === "light" ? <MoonIcon /> : <SunIcon />}
       onChange={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="font-light text-sm px-4 text-center "
-    >
-      Dark mode
-    </Switch>
+      className="px-4 md:scale-50"
+    ></Switch>
   );
 };
